@@ -5,16 +5,35 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+//Fuction prototypes
+//usually included in a .h file (also known as the header file)
+double calc_volume_cylinder(double radius, double height);
+double calc_area_circle(double radius);
+void area_circle();
+void volume_cylinder();
+
+
 const double pi{ 3.14159 };
 
-double calc_area_circle(double radius) {
-	return pi * radius * radius;
+int main() {
+
+	area_circle();
+	volume_cylinder();
+
+	cout << endl;
+	return 0;
 }
+
+
 
 double calc_volume_cylinder(double radius, double height) {
 	// return pi * radius * radius * height;
 	// or
 	return calc_area_circle(radius) * height;
+}
+
+double calc_area_circle(double radius) {
+	return pi * radius * radius;
 }
 
 void area_circle() {
@@ -36,14 +55,4 @@ void volume_cylinder() {
 	cin >> height;
 
 	cout << "The volume of a cylinder with radius " << radius << " and height " << height << " is " << calc_volume_cylinder(radius, height) << endl;
-}
-
-
-int main() {
-
-	area_circle();
-	volume_cylinder();
-
-	cout << endl;
-	return 0;
 }
