@@ -1,16 +1,25 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::fixed;
 using std::setprecision;
+using std::string;
 
-double calc_cost(double base_cost, double tax_rate = 0.06, double shipping = 3.50);
+double calc_cost(double base_cost = 100.0, double tax_rate = 0.06, double shipping = 3.50);
+void greeting(string name, string prefix = "Mr.", string sufix = "");
+
+
 
 double calc_cost(double base_cost, double tax_rate, double shipping) {
 	return base_cost += (base_cost * tax_rate) + shipping;
+}
+
+void greeting(string name, string prefix, string suffix) {
+	cout << "Hello " << prefix + " " + name + " " + suffix << endl;
 }
 
 int main() {
@@ -25,6 +34,15 @@ int main() {
 
 	cost = calc_cost(200.0);
 	cout << "Cost is: " << cost << endl;	// 215.50
+
+	cost = calc_cost();						// 100 + 6 + 3.50
+	cout << "Cost is: " << cost << endl;	//109.50
+
+	greeting("Glenn Jones", "Dr.", "M.D.");
+	greeting("James Rogers", "Professor", "Ph.D.");
+	greeting("Frank Miller", "Dr.");
+	greeting("William Smith");
+	greeting("Mary Howard", "Mrs.", "Ph.D.");
 
 	cout << endl;
 	return 0;
