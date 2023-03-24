@@ -4,10 +4,10 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-void print_array(int arr[], size_t size);
+void print_array(const int arr[], size_t size);
 void set_array(int arr[], size_t size, int value);
 
-void print_array(int arr[], size_t size){ //const
+void print_array(const int arr[], size_t size){
 	for (size_t i{ 0 }; i < size; i++) {
 		cout << arr[i] << " ";
 	}
