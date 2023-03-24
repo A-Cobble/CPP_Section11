@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "defaultArguments", "..\defa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "functionOverloading", "..\functionOverloading\functionOverloading.vcxproj", "{3A4361D2-0EBF-4BC0-B135-4C360530CE6F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "arraysAndFunctions", "..\arraysAndFunctions\arraysAndFunctions.vcxproj", "{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{3A4361D2-0EBF-4BC0-B135-4C360530CE6F}.Release|x64.Build.0 = Release|x64
 		{3A4361D2-0EBF-4BC0-B135-4C360530CE6F}.Release|x86.ActiveCfg = Release|Win32
 		{3A4361D2-0EBF-4BC0-B135-4C360530CE6F}.Release|x86.Build.0 = Release|Win32
+		{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}.Debug|x64.ActiveCfg = Debug|x64
+		{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}.Debug|x64.Build.0 = Debug|x64
+		{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}.Debug|x86.ActiveCfg = Debug|Win32
+		{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}.Debug|x86.Build.0 = Debug|Win32
+		{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}.Release|x64.ActiveCfg = Release|x64
+		{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}.Release|x64.Build.0 = Release|x64
+		{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}.Release|x86.ActiveCfg = Release|Win32
+		{BEDC813E-A4CB-493F-86FA-AD7A8925ADF4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
