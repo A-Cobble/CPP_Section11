@@ -147,6 +147,7 @@ void meanValue(const vector <int> numbers) {
 		cout << endl;
 	}
 }
+
 void smallestValue(vector <int> numbers) {
 	if (numbers.size() == 0) {
 		cout << "Unable to determine the smallest number - list is empty" << endl;
@@ -191,10 +192,7 @@ void invalidInput() {
 	cout << endl;
 }
 
-
 int main() {
-
-
 	char userSelection{};
 	vector <int> numbers{};
 	int userInput{};
@@ -224,9 +222,7 @@ int main() {
 		else {
 			invalidInput();
 		}
-
 	} while (userSelection != 'Q');
-
 
 	cout << endl;
 	return 0;
