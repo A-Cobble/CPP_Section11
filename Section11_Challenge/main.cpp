@@ -92,6 +92,7 @@ using std::string;
 char makeLowercase(char &userInput);
 void printNumbers(vector <int> numbers);
 void addNumber(int &userInput, vector <int> &numbers);
+void meanValue(const vector <int> numbers);
 
 void menu() {
 	cout << "P - Print numbers";
@@ -130,6 +131,21 @@ void addNumber(int &userInput, vector <int> &numbers) {
 	cout << endl;
 }
 
+void meanValue(const vector <int> numbers) {
+	double mean{};
+	if (numbers.size() == 0) {
+		cout << "Unable to calculate the mean - no data" << endl;
+	}
+	else {
+		for (auto num : numbers) {
+			mean += num;
+		}
+		mean = mean / numbers.size();
+		cout << "The mean is: " << mean << endl;
+		cout << endl;
+	}
+}
+
 void quit() {
 	cout << "Goodbye..." << endl;
 }
@@ -151,6 +167,9 @@ int main() {
 		}
 		else if (userSelection == 'A') {
 			addNumber(userInput, numbers);
+		}
+		else if (userSelection == 'M') {
+			meanValue(numbers);
 		}
 		else if (userSelection == 'Q') {
 			quit();
