@@ -93,14 +93,16 @@ char makeLowercase(char &userInput);
 void printNumbers(vector <int> numbers);
 void addNumber(int &userInput, vector <int> &numbers);
 void meanValue(const vector <int> numbers);
+void smallestValue(vector <int> numbers);
+void largestValue(vector <int> numbers);
 
 void menu() {
-	cout << "P - Print numbers";
-	cout << "\nA - Add a number"; 
-	cout << "\nM - Display mean of the numbers";
-	cout << "\nS - Display the smallest number";
-	cout << "\nL - Display the largest number";
-	cout << "\nQ - Quit" << endl;
+	cout << "P - Print numbers" << endl;
+	cout << "A - Add a number" << endl; 
+	cout << "M - Display mean of the numbers" << endl;
+	cout << "S - Display the smallest number" << endl;
+	cout << "L - Display the largest number" << endl;
+	cout << "Q - Quit" << endl;
 
 	cout << "\nEnter your choice: ";
 }
@@ -145,9 +147,48 @@ void meanValue(const vector <int> numbers) {
 		cout << endl;
 	}
 }
+void smallestValue(vector <int> numbers) {
+	if (numbers.size() == 0) {
+		cout << "Unable to determine the smallest number - list is empty" << endl;
+		cout << endl;
+	}
+	else {
+		int min{ numbers[0] };
+		for (auto num : numbers) {
+			if (num < min) {
+				min = num;
+			}
+		}
+		cout << "The smallest number is: " << min << endl;
+		cout << endl;
+	}
+}
+
+void largestValue(vector <int> numbers) {
+	
+	if (numbers.size() == 0) {
+		cout <<  "Unable to determine the largest number - list is empty" << endl;
+		cout << endl;
+	}
+	else {
+		int largest{ numbers[0] };
+		for (auto num : numbers) {
+			if (num > largest) {
+				largest = num;
+			}
+		}
+		cout << "The smallest number is: " << largest << endl;
+		cout << endl;
+	}
+}
 
 void quit() {
 	cout << "Goodbye..." << endl;
+}
+
+void invalidInput() {
+	cout << "Unknown selection, please try again" << endl;
+	cout << endl;
 }
 
 
@@ -171,8 +212,17 @@ int main() {
 		else if (userSelection == 'M') {
 			meanValue(numbers);
 		}
+		else if (userSelection == 'S') {
+			smallestValue(numbers);
+		}
+		else if (userSelection == 'L') {
+			largestValue(numbers);
+		}
 		else if (userSelection == 'Q') {
 			quit();
+		}
+		else {
+			invalidInput();
 		}
 
 	} while (userSelection != 'Q');
