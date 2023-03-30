@@ -88,13 +88,15 @@ using std::cin;
 using std::endl;
 using std::vector;
 using std::string;
+using std::find;
 
 char makeLowercase(char &userInput);
-void printNumbers(vector <int> numbers);
+void printNumbers(const vector <int> numbers);
 void addNumber(int &userInput, vector <int> &numbers);
 void meanValue(const vector <int> numbers);
-void smallestValue(vector <int> numbers);
-void largestValue(vector <int> numbers);
+void smallestValue(const vector <int> numbers);
+void largestValue(const vector <int> numbers);
+void handleFind(const vector<int> numbers);
 
 void menu() {
 	cout << "P - Print numbers" << endl;
@@ -102,6 +104,7 @@ void menu() {
 	cout << "M - Display mean of the numbers" << endl;
 	cout << "S - Display the smallest number" << endl;
 	cout << "L - Display the largest number" << endl;
+	cout << "F - Find a number" << endl;
 	cout << "Q - Quit" << endl;
 
 	cout << "\nEnter your choice: ";
@@ -111,7 +114,7 @@ char makeLowercase(char &userInput) {
 	return toupper(userInput);
 }
 
-void printNumbers(vector <int> numbers) {
+void printNumbers(const vector <int> numbers) {
 	if (numbers.size() == 0) {
 		cout << "[] - the list is empty" << endl;
 	}
@@ -148,7 +151,7 @@ void meanValue(const vector <int> numbers) {
 	}
 }
 
-void smallestValue(vector <int> numbers) {
+void smallestValue(const vector <int> numbers) {
 	if (numbers.size() == 0) {
 		cout << "Unable to determine the smallest number - list is empty" << endl;
 		cout << endl;
@@ -165,7 +168,7 @@ void smallestValue(vector <int> numbers) {
 	}
 }
 
-void largestValue(vector <int> numbers) {
+void largestValue(const vector <int> numbers) {
 	
 	if (numbers.size() == 0) {
 		cout <<  "Unable to determine the largest number - list is empty" << endl;
@@ -179,6 +182,20 @@ void largestValue(vector <int> numbers) {
 			}
 		}
 		cout << "The smallest number is: " << largest << endl;
+		cout << endl;
+	}
+}
+
+void handleFind(const vector<int> numbers) {
+	int target{};
+	cout << "Enter the number to find: ";
+	cin >> target;
+	if (find(numbers.begin(), numbers.end(),target) != numbers.end()) {
+		cout << target << " was found." << endl;
+		cout << endl;
+	}
+	else {
+		cout << target << " was not found." << endl;
 		cout << endl;
 	}
 }
@@ -215,6 +232,9 @@ int main() {
 		}
 		else if (userSelection == 'L') {
 			largestValue(numbers);
+		}
+		else if (userSelection == 'F') {
+			handleFind(numbers);
 		}
 		else if (userSelection == 'Q') {
 			quit();
